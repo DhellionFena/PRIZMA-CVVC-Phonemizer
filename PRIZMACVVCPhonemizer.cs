@@ -13,15 +13,40 @@ namespace PrizmaPhonemizer
         /// <summary>
         /// Brazilian Portuguese CVVC Phonemizer inspired by Team BRAPA development
         /// Doesn't use G2P Dictionary
-        /// Support for BRAPA connotation
-        /// Alias: - C, - V, C -, V -, -C V, V C-, C V, V C, V, V V
+        /// Support for PRIZMA connotation by QkironP
+        /// Alias: [- V], [V], [V V], [V -], [CV], [CCV], [V C], [Vv C]
         /// </summary>
 
-        private readonly string[] vowels = "a,oa,ah,ahn,ax,an,e,en,eh,ehn,ae,aen,i,in,i0,o,on,oh,ohn,u,un,u0".Split(",");
+        private readonly string[] vowels = [
+            "a",
+            "a'",
+            "A",
+            "An",
+            "Am",
+            "e",
+            "e'",
+            "E",
+            "En",
+            "Em",
+            "i",
+            "I",
+            "In",
+            "Im",
+            "o",
+            "o'",
+            "O",
+            "On",
+            "Om",
+            "u",
+            "U",
+            "Un",
+            "Um"
+        ];
+        // private readonly string[] vowels = "a,oa,ah,ahn,ax,an,e,en,eh,ehn,ae,aen,i,in,i0,o,on,oh,ohn,u,un,u0".Split(",");
 
-        private readonly string[] burstConsonants = "b,ch,d,dj,g,k,p,t".Split(",");
+        private readonly string[] burstConsonants = "b,tch,d,dj,g,k,p,t".Split(",");
         private string[] shortConsonants = "r".Split(",");
-        private string[] longConsonants = "s,sh".Split(",");
+        private string[] longConsonants = "s,x".Split(",");
 
         protected override string[] GetVowels() => vowels;
 
